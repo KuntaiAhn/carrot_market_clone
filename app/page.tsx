@@ -1,15 +1,18 @@
 export default function Home() {
   return (
-    <main className="bg-gray-300 h-screen flex items-center justify-center p-5 dark:bg-gray-500">
-      <div className="bg-white shadow-lg p-5 rounded-2xl w-full max-w-screen-sm flex flex-col gap-2 md:flex-row">
-        <input
-          className="w-full rounded-full h-12 bg-gray-200 pl-5 outline-none ring ring-transparent focus:ring-orange-500 focus:ring-offset-2 transition-shadow placeholder:drop-shadow"
-          type="text"
-          placeholder="Search here..."
-        />
-        <button className="bg-black text-white py-2 rounded-full active:scale-90 focus:scale-90 transition-transform font-medium outline-none md:px-10">
-          Search
-        </button>
+    <main className="bg-gray-300 h-screen flex items-center justify-center p-5">
+      <div className="bg-white shadow-lg p-5 rounded-3xl w-full max-w-screen-sm flex flex-col gap-5">
+        {['Kuntai', 'Eunchan', 'Eunbi'].map((person, index) => (
+          <div key={index} className="flex items-center gap-5">
+            <div />
+            <div className="size-8 bg-blue-400 rounded-full" />
+            <span className="text-lg font-medium">{person}</span>
+            <div className=" size-6 bg-red-500 text-white flex items-center justify-center rounded-full relative">
+              <span className="z-10">{index}</span>
+              <div className="size-6 bg-red-500 rounded-full absolute animate-ping" />
+            </div>
+          </div>
+        ))}
       </div>
     </main>
   );
