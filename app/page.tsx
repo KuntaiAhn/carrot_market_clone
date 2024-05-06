@@ -1,30 +1,24 @@
+import Link from 'next/link';
+
 export default function Home() {
   return (
-    <main className="bg-gray-300 h-screen flex flex-col items-center justify-center p-5 gap-3">
-      <div className="bg-white shadow-lg p-5 rounded-3xl w-full max-w-screen-sm flex flex-col gap-5">
-        {['Kuntai', 'Melissa', 'Eunchan', 'Eunbi', 'yourself'].map(
-          (person, index) => (
-            <div key={index} className="flex items-center gap-5">
-              <div />
-              <div className="size-8 bg-blue-400 rounded-full" />
-              <span className="text-lg font-medium">{person}</span>
-              <div className=" size-6 bg-red-500 text-white flex items-center justify-center rounded-full relative">
-                <span className="z-10">{index}</span>
-                <div className="size-6 bg-red-500 rounded-full absolute animate-ping" />
-              </div>
-            </div>
-          )
-        )}
+    <div className="flex flex-col items-center justify-between min-h-screen p-6">
+      <div className="my-auto flex flex-col items-center font-medium gap-2">
+        <span className="text-9xl">🥕</span>
+        <h1 className="text-4xl">Carrot</h1>
+        <h2 className="text-2xl">Welcome to Carrot Market!</h2>
       </div>
-      <div className="bg-cyan-100 p-5 rounded-2xl w-full max w max-w-screen-sm flex flex-col gap-5">
-        <div className="group flex flex-col">
-          <input className="bg-gray-100 w-full" placeholder="Email" />
-          <span className="group-focus-within:block hidden">
-            Make sure it is a valid email...
-          </span>
-          <button>submit</button>
+      <div className="flex flex-col items-center justify-between gap-2 w-full">
+        <Link href="/create-account" className="primary-btn text-lg py-2.5">
+          Get Started
+        </Link>
+        <div className="flex gap-2">
+          <span>Do you already have an account?</span>
+          <Link href="/LogIn" className="hover:underline">
+            LogIn
+          </Link>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
